@@ -1,6 +1,24 @@
+/*reset.css*/
+.aside_sidebar_scroll_area ul {
+  padding-left: 0;
+}
+ol,ul,dl{
+  list-style: none;
+}
+/**/
 .App {
   text-align: center;
+  height: 100vh;
+  overflow-y: hidden;
+  background-color: #7693cf;
 }
+.App >*:not(header){
+  height: calc(100% - 70px);
+}
+svg{
+  color:#fff;
+}
+
 
 .App-logo {
   height: 40vmin;
@@ -15,7 +33,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,4 +53,97 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/*사용자지정*/
+.header_area{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  padding: 10px 100px;
+  background-color: #0f1624;
+}
+img{
+  width: 100%;
+  height: auto;
+}
+.img_box{
+  display: flex;
+  align-items: center;
+}
+.logo_box{
+  width: 50px;
+  height: 50px;
+}
+.user_imgBox{
+  width: 50px;
+  height: 50px;
+}
+
+
+main{
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+.aside_sidebar{
+  width: 200px;
+}
+
+.App-header{
+  width: 100%;
+}
+
+.search_input_box{
+  display: flex;
+  gap: 10px;
+}
+#search_box_btn{
+  white-space: nowrap;
+}
+  /*
+search_box_btn
+  position: absolute;
+  right:0;
+  top:50%;
+} */
+.user_area{
+  
+}
+.user_area a{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.user_name{
+  color: #fff;
+}
+
+/*사이드*/
+.aside_sidebar{
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  background-color: #0f1624;
+}
+.aside_sidebar_main{
+  display: inline-block;
+  width: 70px;
+}
+.aside_sidebar_main img{
+  filter: grayscale(1);
+}
+.aside_sidebar_scroll_item{
+  color:#fff;
+}
+.aside_sidebar_scroll_item div{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #fff;
 }
