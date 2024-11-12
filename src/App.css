@@ -1,16 +1,20 @@
 /*reset.css*/
-.aside_sidebar_scroll_area ul {
+.App ul {
   padding-left: 0;
 }
 ol,ul,dl{
   list-style: none;
 }
+a{
+  cursor: pointer;
+}
 /**/
 .App {
   text-align: center;
   height: 100vh;
-  overflow-y: hidden;
-  background-color: #7693cf;
+  color:#ccc!important;
+  overflow: hidden;
+  background-color: #313338;
 }
 .App >*:not(header){
   height: calc(100% - 70px);
@@ -55,6 +59,45 @@ svg{
   }
 }
 
+/*accordion*/
+.chennel_area.accordion *,.chennel_area.accordion button:not(.collapsed){
+  background-color: transparent;
+  
+  color: #fff;
+  box-shadow: none;
+}
+.chennel_area.accordion *:not(.chennel_header,.chatRoom_list){
+  border: none;
+}
+.accordion-button .arrowIcon{
+  margin-right: 5px;
+  transition: transform .5s ease;
+}
+.accordion-button.collapsed .arrowIcon{
+  transform: rotate(-90deg);
+}
+.accordion-header button.accordion-button{
+  margin: 10px 0;
+  padding:10px;
+  font-size: 15px;
+}
+
+.list_item div{
+  width: 100%;
+}
+
+/*icon*/
+.addRoomIcon{
+  margin-left: auto;
+  margin-right: 20px;
+}
+.editRoom{
+  margin-left: auto;
+  margin-right: 10px;
+}
+.accordion-button::after{
+  display: none;
+}
 /*사용자지정*/
 .header_area{
   display: flex;
@@ -77,19 +120,16 @@ img{
   height: 50px;
 }
 .user_imgBox{
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
 }
 
 
 main{
   display: flex;
-  justify-content: space-between;
-  gap: 30px;
+
 }
-.aside_sidebar{
-  width: 200px;
-}
+
 
 .App-header{
   width: 100%;
@@ -111,25 +151,27 @@ search_box_btn
 .user_area{
   
 }
-.user_area a{
+.user_link{
   display: flex;
   align-items: center;
   gap: 10px;
   text-decoration: none;
   cursor: pointer;
 }
-.user_name{
+/* .user_name{
   color: #fff;
-}
+} */
 
 /*사이드*/
+
 .aside_sidebar{
+  /* width: 100px; */
   padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 30px;
   align-items: center;
-  background-color: #0f1624;
+  background-color: #2B2D31;
 }
 .aside_sidebar_main{
   display: inline-block;
@@ -142,8 +184,148 @@ search_box_btn
   color:#fff;
 }
 .aside_sidebar_scroll_item div{
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
+  padding:10px;
+  overflow: hidden;
   border-radius: 50%;
-  border: 2px solid #fff;
+  border: 3px solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.aside_sidebar_scroll_item div span{
+  display: inline-block;
+  width: 16px;
+  height: 22px;
+  overflow: hidden;
+}
+.aside_sidebar_scroll_area ul {
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+
+/*content_warp*/
+.content_warp,.content_Area{
+  display: flex;
+  width: 100%;
+}
+.chennel_area *,.chennel_content *{
+  text-align: left;
+}
+.chennel_area{
+  
+  width: 300px;
+  padding:20px 0;
+  color: #fff;
+  background-color: #1b2843;
+}
+.chennel_header{
+  /* margin: -20px; */
+  margin-bottom: 20px;
+  border-bottom: 1px solid #fff;
+  padding: 20px;
+}
+.chatRoom_list,.chatRoom_list.accordion-item{
+  border: none;
+  border-bottom: 1px dashed;
+  /* margin-bottom: 30px; */
+}
+.chennelRoom ul{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.chennelRoom a{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.chennelRoom a div{
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.chennelRoom li,.chennelRoom{
+  opacity: 0.5;
+}
+.chennelRoom li.active,.chennelRoom.active{
+  opacity: 1;
+}
+
+/*채널 유저*/
+.connected_user_area{
+  width: 250px;
+  padding: 20px;
+  background-color:#2B2D31;
+}
+.connected_user_area .user_name{
+  white-space: nowrap;
+}
+.user_list ul{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.user_list h6{
+  text-align: left;
+}
+.offLine_user *{
+  opacity: 0.8;
+}
+.chennel_content{
+  width: 100%;
+}
+.chennel_content>div{
+  padding: 0 20px;
+}
+
+/*chat_area*/
+.chat_area{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.chat_history{
+  height: 100%;
+/* background-color: red; */
+}
+.chat_input_area{
+  /* background-color: blue; */
+  margin-bottom: 1rem;
+  padding:10px 26px;
+}
+.chat_input_box{
+  background-color: #444954;
+  display: flex;
+  gap: 15px;
+  padding:15px;
+  text-align: start;
+  border-radius: 10px;
+}
+.inputFileLabel{
+  cursor: pointer;
+}
+.inputChat{
+  border: none;
+  width: 100%;
+  background-color: transparent;
+  color:#fff;
+  opacity: 0.8;
+}
+.inputChat:focus {
+  outline: none;
+}
+.inputChat::placeholder{
+  color:#fff;
+  opacity: 0.5;
+}
+.hidden{
+  display: block;
+  width: 0;
+  height: 0;
+  overflow: hidden;
 }
